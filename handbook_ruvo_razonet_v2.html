@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handbook — Parceria Ruvo × Razonet</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --razonet-navy: #0D1B4B;
+    --razonet-blue: #1565C0;
+    --razonet-blue-light: #0171EB;
+    --razonet-off-white: #EFF3F8;
+    --ruvo-orange: #FF5B1F;
+    --ruvo-orange-light: #FF7A45;
+    --ruvo-dark: #0B1437;
+    --white: #FFFFFF;
+    --gray-light: #F5F5F5;
+    --gray-mid: #888888;
+    --text-dark: #1C232D;
+    --text-body: #344054;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #FFFFFF;
+    color: var(--text-body);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── CAPA ── */
+  .cover {
+    background: var(--razonet-navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 480px; height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,91,31,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(21,101,192,0.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 52px;
+  }
+
+  .logo-razonet {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.3px;
+  }
+  .logo-razonet span { color: var(--razonet-blue-light); }
+
+  .logo-ruvo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--ruvo-orange);
+    letter-spacing: 1px;
+  }
+
+  .cover-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255,255,255,0.25);
+  }
+
+  .cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 52px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,91,31,0.15);
+    border: 1px solid rgba(255,91,31,0.35);
+    border-radius: 100px;
+    padding: 7px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ruvo-orange);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  .cover-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 56px;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .cover-title span {
+    color: var(--ruvo-orange);
+    font-style: italic;
+  }
+
+  .cover-subtitle {
+    font-size: 17px;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px;
+    margin: 18px auto 0;
+    font-weight: 400;
+  }
+
+  .cover-partnership-line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 52px;
+    padding: 20px 36px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+  }
+
+  .brand-pill {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 8px;
+  }
+  .brand-pill.razonet { background: var(--razonet-blue); color: white; }
+  .brand-pill.ruvo { background: var(--ruvo-orange); color: white; }
+
+  .x-sign {
+    font-size: 18px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  .cover-tagline {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-left: 6px;
+    font-style: italic;
+  }
+
+  .cover-footer {
+    padding: 28px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── SEÇÕES ── */
+  .section {
+    padding: 72px 52px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    padding: 72px 52px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--razonet-blue);
+    margin-bottom: 14px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 18px; height: 2px;
+    background: var(--razonet-blue);
+    border-radius: 2px;
+  }
+
+  .section-label.orange { color: var(--ruvo-orange); }
+  .section-label.orange::before { background: var(--ruvo-orange); }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--razonet-navy);
+    margin-bottom: 18px;
+  }
+
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--razonet-navy);
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 14px;
+    color: var(--text-body);
+  }
+
+  /* ── DIVISOR ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #DDE4F0, transparent);
+    margin: 0 52px;
+  }
+
+  .divider-accent {
+    height: 3px;
+    background: linear-gradient(to right, var(--razonet-blue), var(--ruvo-orange));
+    margin: 0;
+  }
+
+  /* ── O QUE É RUVO ── */
+  .ruvo-intro-block {
+    background: linear-gradient(135deg, var(--ruvo-dark) 0%, #1a2550 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 72px 52px;
+  }
+
+  .ruvo-intro-block::after {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,91,31,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .ruvo-intro-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ruvo-intro-block .section-label { color: var(--ruvo-orange); }
+  .ruvo-intro-block .section-label::before { background: var(--ruvo-orange); }
+  .ruvo-intro-block h2 { color: white; }
+  .ruvo-intro-block p { color: rgba(255,255,255,0.75); }
+
+  .ruvo-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 36px;
+  }
+
+  .ruvo-feature-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 24px 26px;
+  }
+
+  .ruvo-feature-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(255,91,31,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .ruvo-feature-card h3 {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .ruvo-feature-card p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .rates-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .rate-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,91,31,0.3);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ruvo-orange);
+  }
+
+  .rate-badge span {
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    font-size: 11px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── PARCERIA ── */
+  .partnership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 36px;
+  }
+
+  .pillar-card {
+    border: 1px solid #DDE4F0;
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+
+  .pillar-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    color: #EFF3F8;
+    line-height: 1;
+    position: absolute;
+    top: 16px; right: 22px;
+  }
+
+  .pillar-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: #EFF3F8;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .pillar-card h3 { font-size: 16px; margin-bottom: 10px; }
+  .pillar-card p { font-size: 14px; color: #5a6478; margin: 0; }
+
+  /* ── CRONOGRAMA ── */
+  .timeline-block {
+    background: var(--razonet-off-white);
+    padding: 72px 52px;
+  }
+
+  .timeline-block .section-label { color: var(--razonet-blue); }
+  .timeline-block .section-label::before { background: var(--razonet-blue); }
+
+  .timeline-inner { max-width: 860px; margin: 0 auto; }
+
+  .timeline {
+    margin-top: 36px;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--razonet-blue), var(--ruvo-orange));
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  .timeline-dot {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--razonet-blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--razonet-blue);
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .timeline-dot.orange {
+    border-color: var(--ruvo-orange);
+    color: var(--ruvo-orange);
+  }
+
+  .timeline-content {
+    background: white;
+    border: 1px solid #DDE4F0;
+    border-radius: 14px;
+    padding: 20px 24px;
+    flex: 1;
+  }
+
+  .timeline-date {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ruvo-orange);
+    margin-bottom: 4px;
+  }
+
+  .timeline-content h3 { font-size: 15px; margin-bottom: 6px; }
+  .timeline-content p { font-size: 13px; color: #5a6478; margin: 0; }
+
+  /* ── BENEFÍCIOS ── */
+  .benefits-block {
+    padding: 72px 52px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .benefit-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 36px;
+  }
+
+  .benefit-card {
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-card.blue-card {
+    background: linear-gradient(135deg, var(--razonet-navy) 0%, #1a2d7a 100%);
+  }
+
+  .benefit-card.orange-card {
+    background: linear-gradient(135deg, var(--ruvo-orange) 0%, #e84800 100%);
+  }
+
+  .benefit-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    pointer-events: none;
+  }
+
+  .benefit-card-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 8px;
+  }
+
+  .benefit-card h3 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .benefit-card .benefit-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .benefit-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    margin: 0;
+  }
+
+  /* ── COMO FUNCIONA RUVO ── */
+  .how-block {
+    background: var(--razonet-off-white);
+    padding: 72px 52px;
+  }
+
+  .how-inner { max-width: 860px; margin: 0 auto; }
+
+  .steps-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    margin-top: 36px;
+    position: relative;
+  }
+
+  .steps-row::after {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 17%; right: 17%;
+    height: 2px;
+    background: linear-gradient(to right, var(--razonet-blue), var(--ruvo-orange));
+  }
+
+  .step-item {
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-circle {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    background: white;
+    border: 2px solid var(--razonet-blue);
+    box-shadow: 0 4px 16px rgba(21,101,192,0.15);
+  }
+
+  .step-item:nth-child(3) .step-circle {
+    border-color: var(--ruvo-orange);
+  }
+
+  .step-item h3 { font-size: 14px; margin-bottom: 8px; }
+  .step-item p { font-size: 13px; color: #5a6478; }
+
+  /* ── PÚBLICO-ALVO ── */
+  .audience-block {
+    padding: 72px 52px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .audience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .audience-tag {
+    padding: 9px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid;
+  }
+
+  .audience-tag.blue { background: #EFF3F8; border-color: #C7D7F0; color: var(--razonet-navy); }
+  .audience-tag.orange { background: #FFF3EE; border-color: #FFCBB0; color: #c43800; }
+
+  /* ── MENSAGEM FINAL ── */
+  .final-block {
+    background: linear-gradient(135deg, var(--razonet-navy) 0%, var(--ruvo-dark) 100%);
+    padding: 80px 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-block::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(255,91,31,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .final-block h2 {
+    color: white;
+    font-size: 40px;
+    max-width: 640px;
+    margin: 0 auto 18px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-block h2 em {
+    color: var(--ruvo-orange);
+    font-style: italic;
+  }
+
+  .final-block p {
+    color: rgba(255,255,255,0.6);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary {
+    background: var(--ruvo-orange);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #0A0F1E;
+    padding: 32px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-brand strong { color: white; }
+
+  .footer-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: #EFF3F8;
+    border-left: 4px solid var(--razonet-blue);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 22px;
+    margin: 24px 0;
+  }
+
+  .callout p { margin: 0; font-size: 14px; color: var(--text-body); }
+
+  .callout.orange-left {
+    border-left-color: var(--ruvo-orange);
+    background: #FFF3EE;
+  }
+
+  /* ── DUAS COLUNAS ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 20px;
+  }
+
+  .info-box {
+    background: var(--gray-light);
+    border-radius: 14px;
+    padding: 24px;
+  }
+
+  .info-box .label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--gray-mid);
+    margin-bottom: 8px;
+  }
+
+  .info-box p { font-size: 14px; color: var(--text-body); margin: 0; }
+
+  /* ── CHECKLIST ── */
+  .checklist {
+    list-style: none;
+    margin-top: 16px;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text-body);
+  }
+
+  .checklist li::before {
+    content: '';
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    background: var(--razonet-blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4 9l3.5 3.5L14 6' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+  }
+
+  .checklist.orange li::before { background-color: var(--ruvo-orange); }
+
+  /* ── RESPONSIVO BÁSICO ── */
+  @media (max-width: 680px) {
+    .cover-title { font-size: 38px; }
+    .ruvo-features, .partnership-grid, .benefit-cards, .steps-row, .two-col { grid-template-columns: 1fr; }
+    .cover-header { flex-wrap: wrap; gap: 12px; }
+    .steps-row::after { display: none; }
+    .section, .section-full, .ruvo-intro-block, .timeline-block,
+    .how-block, .audience-block, .benefits-block { padding: 48px 24px; }
+    .cover-body { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── CAPA ─── -->
+<section class="cover">
+  <div class="cover-header">
+    <div class="logo-razonet"><span>Razonet</span></div>
+    <div class="cover-divider"></div>
+    <div class="logo-ruvo">RUVO</div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-title">Razonet<br>× <span>Ruvo</span></div>
+    <p class="cover-subtitle">Tudo o que você precisa saber sobre a nossa parceria estratégica com a Ruvo — e o que ela significa para os nossos clientes.</p>
+
+    <div class="cover-partnership-line">
+      <span class="brand-pill razonet">Razonet</span>
+      <span class="x-sign">×</span>
+      <span class="brand-pill ruvo">Ruvo</span>
+      <span class="cover-tagline">Contabilidade + Conta Global em Dólares</span>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>Documento Interno · Parceria Oficial</span>
+    <span>Início da parceria: Abril 2026</span>
+  </div>
+</section>
+
+<div class="divider-accent"></div>
+
+<!-- ─── O QUE É A RUVO ─── -->
+<section class="ruvo-intro-block">
+  <div class="ruvo-intro-inner">
+    <div class="section-label orange">Conheça o parceiro</div>
+    <h2>O que é a Ruvo?</h2>
+    <p>A Ruvo é uma <strong style="color:white">conta financeira global para brasileiros</strong> que permite receber dólares, converter reais em USD instantaneamente, pagar com cartão Visa em qualquer lugar do mundo e operar internacionalmente sem pagar IOF.</p>
+    <p>Fundada com investimento de Y Combinator e Coinbase Ventures, a Ruvo foi construída especificamente para empreendedores e empresas brasileiras que têm clientes, fornecedores ou operações fora do Brasil.</p>
+
+    <div class="ruvo-features">
+      <div class="ruvo-feature-card">
+        <div class="ruvo-feature-icon">💵</div>
+        <h3>Conta em Dólares</h3>
+        <p>Receba pagamentos internacionais diretamente em USD, sem precisar de banco no exterior.</p>
+      </div>
+      <div class="ruvo-feature-card">
+        <div class="ruvo-feature-icon">⚡</div>
+        <h3>Conversão via Pix Instantânea</h3>
+        <p>Envie BRL pelo Pix da sua empresa e os valores aparecem na conta Ruvo convertidos em segundos.</p>
+      </div>
+      <div class="ruvo-feature-card">
+        <div class="ruvo-feature-icon">💳</div>
+        <h3>Cartão Visa Internacional</h3>
+        <p>Gaste em dólares nos EUA ou em qualquer parte do mundo. Sem anuidade para uso no exterior.</p>
+      </div>
+      <div class="ruvo-feature-card">
+        <div class="ruvo-feature-icon">🚫</div>
+        <h3>Zero IOF</h3>
+        <p>Sem o imposto que corrói cada transação internacional. Para empresas que operam fora, a economia é significativa mês a mês.</p>
+      </div>
+    </div>
+
+    <div class="rates-row">
+      <div class="rate-badge">BRL → USD 1,8%<span>taxa de conversão</span></div>
+      <div class="rate-badge">BRL → USDT 0,9%<span>via stablecoin</span></div>
+      <div class="rate-badge">Zero IOF<span>em todas as operações</span></div>
+      <div class="rate-badge">USDT → Crypto 0,0%<span>sem taxa adicional</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTEXTO DA PARCERIA ─── -->
+<section class="section">
+  <div class="section-label">A Parceria</div>
+  <h2>Por que Razonet e Ruvo fazem sentido juntas?</h2>
+  <p>A Razonet cuida da contabilidade, das obrigações fiscais e da organização financeira das empresas brasileiras. A Ruvo resolve o lado financeiro das operações internacionais dessas mesmas empresas. São dois lados do mesmo problema.</p>
+
+  <div class="callout">
+    <p>📌 <strong>A parceria não representa a totalidade de nenhuma das empresas.</strong> É um esforço focado de co-marketing e co-vendas, direcionado ao segmento específico de clientes Razonet que tem receitas ou despesas internacionais — e a todos os clientes Ruvo que precisam de contabilidade estruturada no Brasil.</p>
+  </div>
+
+  <p>Quando um empreendedor recebe em dólares por um serviço prestado ao exterior, ele enfrenta dois desafios ao mesmo tempo: <strong>como movimentar esse dinheiro de forma eficiente</strong> (Ruvo resolve isso) e <strong>como classificar essa receita corretamente para a Receita Federal</strong> (Razonet resolve isso).</p>
+
+  <div class="two-col">
+    <div class="info-box">
+      <div class="label">Razonet resolve</div>
+      <p>Contabilidade, nota fiscal para exterior, enquadramento no Simples Nacional, obrigações fiscais e organização financeira da empresa.</p>
+    </div>
+    <div class="info-box">
+      <div class="label">Ruvo resolve</div>
+      <p>Conta em USD, conversão BRL → USD sem IOF, cartão Visa internacional, pagamentos para fornecedores nos EUA.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── 4 PILARES ─── -->
+<section class="section">
+  <div class="section-label">Estrutura da Parceria</div>
+  <h2>Os 4 pilares do plano de 90 dias</h2>
+  <p>A parceria foi estruturada em quatro frentes que acontecem em paralelo, de abril a junho de 2026.</p>
+
+  <div class="partnership-grid">
+    <div class="pillar-card">
+      <div class="pillar-number">01</div>
+      <div class="pillar-icon">📧</div>
+      <h3>E-mail para a Base</h3>
+      <p>Cada empresa envia 3 e-mails para a própria base apresentando o parceiro de forma progressiva — da apresentação à conversão. Cada e-mail seguinte é enviado apenas para quem abriu o anterior.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">02</div>
+      <div class="pillar-icon">📱</div>
+      <h3>Redes Sociais</h3>
+      <p>Posts no LinkedIn e Instagram entre 15 de abril e 27 de maio. Mix de 2 posts colaborativos co-branded, 3 posts por empresa e reposts nos Stories.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">03</div>
+      <div class="pillar-icon">✍️</div>
+      <h3>Blog e Conteúdo</h3>
+      <p>2 artigos por blog (4 ao total). Cada post é escrito pela outra equipe, referencia o parceiro naturalmente e gera backlinks com valor de SEO mútuo.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">04</div>
+      <div class="pillar-icon">🤝</div>
+      <h3>Vendas Ativas</h3>
+      <p>Ambas as equipes incorporam o parceiro no processo de onboarding e nas abordagens comerciais ativas com clientes existentes qualificados.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── PÚBLICO-ALVO ─── -->
+<section class="audience-block">
+  <div class="section-label">Audiência</div>
+  <h2>Para quem essa parceria é direcionada?</h2>
+  <p>O foco está no empreendedor brasileiro que opera nos dois mundos: tem empresa no Brasil, mas tem clientes, fornecedores ou operações fora do país.</p>
+
+  <div class="callout orange-left">
+    <p>🎯 <strong>Perfil central:</strong> Empresa do Simples Nacional ou MEI com faturamento entre R$ 1M e R$ 4M anuais, que recebe pagamentos internacionais ou paga fornecedores no exterior.</p>
+  </div>
+
+  <p>Exemplos de quem se encaixa:</p>
+
+  <div class="audience-tags">
+    <span class="audience-tag blue">Agências digitais com clientes no exterior</span>
+    <span class="audience-tag blue">Freelancers e consultores internacionais</span>
+    <span class="audience-tag blue">E-commerces com fornecedores nos EUA</span>
+    <span class="audience-tag blue">Prestadores de serviços de tecnologia</span>
+    <span class="audience-tag orange">Clientes Ruvo que precisam de contabilidade no Brasil</span>
+    <span class="audience-tag orange">Empresas brasileiras que operam em BRL e USD</span>
+    <span class="audience-tag blue">Escritórios de advocacia com clientes internacionais</span>
+    <span class="audience-tag blue">Plataformas SaaS com receita em dólar</span>
+  </div>
+</section>
+
+<!-- ─── CALENDÁRIO ─── -->
+<section class="timeline-block">
+  <div class="timeline-inner">
+    <div class="section-label">Cronograma</div>
+    <h2>O que acontece e quando</h2>
+    <p>O plano de 90 dias começa em abril de 2026 e se estende até o início de julho, com ações escalonadas ao longo dos meses.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">ABR</div>
+        <div class="timeline-content">
+          <div class="timeline-date">13 de Abril</div>
+          <h3>Disparo dos primeiros e-mails</h3>
+          <p>Ambas as empresas enviam o Email 1 para toda a base: Razonet apresenta a Ruvo e Ruvo apresenta a Razonet. Foco em IOF e contabilidade internacional.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot orange">ABR</div>
+        <div class="timeline-content">
+          <div class="timeline-date">15 de Abril</div>
+          <h3>Anúncio oficial da parceria nas redes</h3>
+          <p>Post colaborativo co-branded no LinkedIn e Instagram de ambas as empresas. Lançamento público da parceria Ruvo × Razonet.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">ABR</div>
+        <div class="timeline-content">
+          <div class="timeline-date">27 de Abril</div>
+          <h3>E-mails educativos (Email 2)</h3>
+          <p>Apenas para quem abriu o Email 1. Ruvo envia conteúdo sobre o que a Receita Federal exige quando você recebe receita em dólares. Razonet envia explicação detalhada do custo real do IOF.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot orange">MAI</div>
+        <div class="timeline-content">
+          <div class="timeline-date">4 de Maio</div>
+          <h3>E-mails de conversão (Email 3) + Oferta exclusiva</h3>
+          <p>Apenas para quem abriu o Email 2. Apresentação das ofertas exclusivas da parceria com CTA direto e prazo definido.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">MAI</div>
+        <div class="timeline-content">
+          <div class="timeline-date">Até 27 de Maio</div>
+          <h3>Calendário de posts nas redes sociais</h3>
+          <p>Posts semanais alternando entre Ruvo e Razonet nos dois canais. Temas: IOF, erros contábeis com pagamentos internacionais, nota fiscal para exterior.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot orange">JUN</div>
+        <div class="timeline-content">
+          <div class="timeline-date">3 de Junho</div>
+          <h3>Post colaborativo final de encerramento</h3>
+          <p>"IOF, spread de câmbio e contabilidade: o que sua empresa realmente paga nas operações internacionais." Post conjunto e completo das duas marcas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COMO FUNCIONA A RUVO ─── -->
+<section class="how-block">
+  <div class="how-inner">
+    <div class="section-label orange">Passo a passo</div>
+    <h2>Como a Ruvo funciona na prática</h2>
+    <p>Para apresentar a Ruvo com clareza a um cliente Razonet, use este fluxo simples.</p>
+
+    <div class="steps-row">
+      <div class="step-item">
+        <div class="step-circle">1️⃣</div>
+        <h3>Cria a conta com CNPJ</h3>
+        <p>O cadastro é feito com o CNPJ da empresa. A aprovação leva até 3 dias úteis.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">2️⃣</div>
+        <h3>Envia via Pix do CNPJ</h3>
+        <p>O dinheiro é convertido instantaneamente para USD com taxa de 1,8% (ou 0,9% em USDT).</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3️⃣</div>
+        <h3>Paga ou guarda em USD</h3>
+        <p>Pode pagar qualquer conta nos EUA ou manter o saldo na carteira Ruvo aguardando câmbio melhor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BENEFÍCIOS EXCLUSIVOS ─── -->
+<section class="benefits-block">
+  <div class="section-label">Incentivos da parceria</div>
+  <h2>Benefícios exclusivos para os clientes</h2>
+  <p>A parceria vem com vantagens concretas para quem migrar entre as duas plataformas. Use esses benefícios como argumento de conversão.</p>
+
+  <div class="benefit-cards">
+    <div class="benefit-card blue-card">
+      <div class="benefit-card-tag">Para clientes Ruvo → Razonet</div>
+      <h3>Primeiro mês grátis ou 50% de desconto na Razonet</h3>
+      <div class="benefit-value">1 mês free<br><small style="font-size:18px;opacity:.7">ou 50% off</small></div>
+      <p>Benefício exclusivo para clientes Ruvo que contratarem a Razonet através da parceria. Ideal para quem já usa a conta global e ainda não tem contabilidade estruturada no Brasil.</p>
+    </div>
+    <div class="benefit-card orange-card">
+      <div class="benefit-card-tag">Para clientes Razonet → Ruvo</div>
+      <h3>$20 em dólares creditados na conta</h3>
+      <div class="benefit-value">$20 USD<br><small style="font-size:18px;opacity:.7">na conta</small></div>
+      <p>Cliente Razonet que abrir a conta Ruvo e fizer uma transferência de pelo menos $500 recebe $20 em dólares diretamente na conta, prontos para usar.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:28px">
+    <p>💡 <strong>Como usar nas conversas com clientes:</strong> sempre que identificar que o cliente tem operações internacionais, mencione a Ruvo diretamente, explique o benefício dos $20 e encaminhe o link de indicação. Não é uma menção casual — é um passo estruturado no processo.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── PROCESSO COMERCIAL INTERNO ─── -->
+<section class="section">
+  <div class="section-label">Processo Interno</div>
+  <h2>Como identificar um cliente ideal para a Ruvo</h2>
+  <p>Durante o onboarding ou em qualquer conversa com clientes ativos, inclua esta pergunta de qualificação no fluxo natural:</p>
+
+  <div class="callout orange-left" style="margin:24px 0">
+    <p>❓ <em>"A sua empresa tem alguma receita internacional, paga fornecedores no exterior ou trabalha com clientes fora do Brasil?"</em></p>
+  </div>
+
+  <p>Se a resposta for sim, apresente a Ruvo diretamente e ofereça o link de indicação ou faça uma introdução quente. Não é necessário dominar todos os detalhes técnicos da Ruvo — a mensagem principal é simples:</p>
+
+  <ul class="checklist">
+    <li>A Ruvo é uma conta em dólares para empresas brasileiras</li>
+    <li>Sem IOF nas transações internacionais</li>
+    <li>Conversão de BRL para USD via Pix, instantaneamente</li>
+    <li>Cartão Visa para gastos em dólar no mundo todo</li>
+    <li>Aprovada em até 3 dias, aberta com CNPJ</li>
+    <li>Clientes Razonet ganham $20 ao transferir $500 ou mais</li>
+  </ul>
+
+  <h3 style="margin-top:32px">Para a base de clientes existente</h3>
+  <p>Faça uma varredura direcionada nos clientes ativos para identificar quem já tem operações internacionais. A abordagem não deve ser um disparo em massa — deve ser uma mensagem individual, que referencia a situação específica do cliente e recomenda a Ruvo de forma contextualizada.</p>
+
+  <div class="callout">
+    <p>✉️ <strong>Exemplo de abordagem:</strong> <em>"Olá [nome], vi aqui que vocês têm clientes nos EUA. Tem uma solução nova que recomendo para isso — ela elimina o IOF e simplifica muito a vida de quem opera em dólar. Posso te explicar rapidinho?"</em></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── CONTEÚDO BLOG ─── -->
+<section class="section">
+  <div class="section-label">Conteúdo e SEO</div>
+  <h2>Os artigos da parceria</h2>
+  <p>Quatro artigos serão publicados ao longo dos 90 dias — dois no blog da Razonet e dois no blog da Ruvo. Cada artigo é escrito pela equipe parceira e serve como fonte de SEO e backlink para ambas as marcas.</p>
+
+  <div class="two-col" style="margin-top:24px">
+    <div class="info-box">
+      <div class="label">No blog da Razonet</div>
+      <p><strong>Semana 4:</strong> "Como receber pagamentos internacionais no Brasil sem pagar caro por isso" — escrito pela Ruvo.</p>
+      <br>
+      <p><strong>Semana 10:</strong> "Nota fiscal para serviços prestados ao exterior: guia completo para MEIs e Simples Nacional" — escrito pela Razonet.</p>
+    </div>
+    <div class="info-box">
+      <div class="label">No blog da Ruvo</div>
+      <p><strong>Semana 6:</strong> "Por que o empreendedor brasileiro que opera internacionalmente precisa de um contador especializado" — escrito pela Razonet.</p>
+      <br>
+      <p><strong>Semana 11:</strong> "O stack financeiro completo para empresas brasileiras com operações no exterior" — escrito pela Ruvo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MENSAGEM FINAL ─── -->
+<section class="final-block">
+  <h2>Juntos, cobrimos <em>tudo</em> que o empreendedor brasileiro precisa para operar no mundo.</h2>
+  <p>A Razonet organiza, orienta e faz junto. A Ruvo move o dinheiro para onde ele precisa estar. Para o cliente, é um ecossistema completo.</p>
+  <div class="cta-row">
+    <a href="https://wa.me/5549999936719" class="btn-primary">📲 Falar com a Razonet</a>
+    <a href="https://ruvo.com/pt" class="btn-secondary">🌐 Conhecer a Ruvo</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-brand"><strong>Razonet</strong> × <strong style="color:var(--ruvo-orange)">Ruvo</strong> — Parceria Oficial 2026</div>
+  <div class="footer-note">Documento interno · Uso exclusivo da equipe Razonet</div>
+</footer>
+
+</body>
+</html>
